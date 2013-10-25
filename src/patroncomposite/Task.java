@@ -66,6 +66,14 @@ public class Task implements ProjectItem{
         owner = newOwner;
     }
     
+    @Override
+    public double getCompletionTime(){
+        long diff;
+        diff = this.getStartDate().getTime()-this.getFinishDate().getTime();
+        diff = diff / (1000*60*60*24);
+        return (double) diff;
+    }
+    
     public void setTimeRequired(double newTimeRequired){
         timeRequired = newTimeRequired;
     }

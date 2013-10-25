@@ -11,7 +11,7 @@ import java.util.Iterator;
 public class Project implements ProjectItem{
     private String name;
     private String description;
-    private ArrayList projectItems = new ArrayList();
+    private ArrayList<ProjectItem> projectItems = new ArrayList<ProjectItem>();
     
     public Project(){
     }
@@ -29,10 +29,20 @@ public class Project implements ProjectItem{
         return description;
     }
     
-    public ArrayList getProjectItems(){
+    public ArrayList<ProjectItem> getProjectItems(){
         return projectItems;
     }
     
+    @Override
+    public double getCompletionTime(){
+        double totalTime = 0;
+        for (ProjectItem item : projectItems){
+            totalTime += item.getCompletionTime();
+        }
+        return totalTime;
+    }
+    
+    @Override
     public double getTimeRequired(){
         double totalTime = 0;
         Iterator items = projectItems.iterator();

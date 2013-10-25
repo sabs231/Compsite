@@ -60,6 +60,16 @@ public class Deliverable implements ProjectItem{
     public Contact getOwner(){
         return owner;
     }
+    
+    @Override
+    public double getCompletionTime(){
+        long diff;
+        diff = this.getStartDate().getTime()-this.getFinishDate().getTime();
+        diff = diff / (1000*60*60*24);
+        return (double) diff;
+    }
+    
+    @Override
     public double getTimeRequired(){
         return 0;
     }

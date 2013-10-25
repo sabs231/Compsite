@@ -14,13 +14,45 @@ public class Deliverable implements ProjectItem{
     private String description;
     private Contact owner;
     private Date startDate, finishDate;
+    private String fileName;
+    private int fileSize;
     
     public Deliverable(){}
     
-    public Deliverable (String newName, String newDescription, Contact newOwner){
+    public Deliverable (String newName, String newDescription, Contact newOwner, String newFileName){
         name = newName;
         description = newDescription;
         owner = newOwner;
+        fileName = newFileName;
+        fileSize = 0;
+    }
+
+    /**
+     * @return the fileName
+     */
+    public String getFileName() {
+        return fileName;
+    }
+
+    /**
+     * @param fileName the fileName to set
+     */
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
+    }
+
+    /**
+     * @return the fileSize
+     */
+    public int getFileSize() {
+        return fileSize;
+    }
+
+    /**
+     * @param fileSize the fileSize to set
+     */
+    public void setFileSize(int fileSize) {
+        this.fileSize = fileSize;
     }
 
     /**
@@ -63,6 +95,7 @@ public class Deliverable implements ProjectItem{
     
     @Override
     public double getCompletionTime(){
+        if(this.startDate == null || this.finishDate == null) return 0;
         long diff;
         diff = this.getStartDate().getTime()-this.getFinishDate().getTime();
         diff = diff / (1000*60*60*24);

@@ -34,24 +34,24 @@ public class DataCreator {
     }
     
     private static Serializable createData(){
-        Contact contact1 = new ContactImpl("Ivan", "Ambres", "Jefe de Proyecto", "GDI Informática");
-        Contact contact2 = new ContactImpl("Carmen", "García", "Analista Programador", "Microsoft");
+        Contact contact1 = new ContactImpl("Ivan", "Ambres", "Jefe de Proyecto", "GDI Informï¿½tica");
+        Contact contact2 = new ContactImpl("Carmen", "Garcï¿½a", "Analista Programador", "Microsoft");
         Contact contact3 = new ContactImpl("Guillermo", "Serrano", "Ingeniero de Pruebas", "Funciona BIEN TODO");
         Contact contact4 = new ContactImpl("Jorge", "Mateo", "Arquitecto de Software", "SOFTGAL");
         
         
         Project project = new Project ("Portal GDI", "Desarrollo del Portal Corporativo de GDI");
         
-        Deliverable deliverable1 = new Deliverable("Plan Maestro", "Documento del Proyecto", contact1);
-        Task task1 = new Task("Definir y Analisar", "Ingeniería de Requisitos del Sistema", contact2, 11.0);
-        Task task2 = new Task("Diseño", "Diseño del Sistema", contact4, 7.5);
-        Task task3 = new Task("Implementar", "Implementar la aplicación", contact3, 10.2);
+        Deliverable deliverable1 = new Document("Plan Maestro", "Documento del Proyecto", contact1, "Plan_Maestro.docx","ES","Documento, Maestro, Chingon","docx","C:/path/to/file/");
+        Task task1 = new Task("Definir y Analisar", "Ingenierï¿½a de Requisitos del Sistema", contact2, 11.0);
+        Task task2 = new Task("Diseï¿½o", "Diseï¿½o del Sistema", contact4, 7.5);
+        Task task3 = new Task("Implementar", "Implementar la aplicaciï¿½n", contact3, 10.2);
         project.addProjectItem(deliverable1);
         project.addProjectItem(task1);
         project.addProjectItem(task2);
         project.addProjectItem(task3);
         
-        Deliverable deliverable11 = new Deliverable("SRS","Documento de Requisitos", contact1);
+        Deliverable deliverable11 = new XMLDiagram("SRS","Documento de Requisitos", contact1, "SRS.xml", "C:/path/to/schema/", "C:/path/to/source");
         Task task11 = new Task("Definir Actores", "Analizar los actores que intervienen en el proyecto", contact4, 2.5);
         Task task12 = new Task("Identificar CU", "Desarrollar el modelo de casos de uso del distema", contact1, 14.0);
         task1.addProjectItem(task11);
@@ -59,14 +59,14 @@ public class DataCreator {
         task1.addProjectItem(deliverable11);
         
         
-        Task task21 = new Task("Diseño Estatático", "Desarrollar los modelos de clases de cada CU", contact1, 1.8);
-        Task task22 = new Task("Diseño Dinámico", "Desarrollar los modelos de interación de cada CU", contact4, 5.0);
+        Task task21 = new Task("Diseï¿½o Estatï¿½tico", "Desarrollar los modelos de clases de cada CU", contact1, 1.8);
+        Task task22 = new Task("Diseï¿½o Dinï¿½mico", "Desarrollar los modelos de interaciï¿½n de cada CU", contact4, 5.0);
         Task task23 = new Task("Modelo desplique", "Desarrollar el modelo de despliegue", contact3, 17.5);
         task2.addProjectItem(task21);
         task2.addProjectItem(task22);
         task2.addProjectItem(task23);
         
-        Deliverable deliverable31 = new Deliverable("Código Fuente", "Los distintos códigos desarrolladosCo", contact1);
+        Deliverable deliverable31 = new Document("Cï¿½digo Fuente", "Los distintos cï¿½digos desarrolladosCo", contact1, "src.zip", "JAVA", "source, code, codigo, fuente, codigo fuente, tripas", "ZIP", "C:/path/to/source/");
         task3.addProjectItem(deliverable31);
         return project;
     }

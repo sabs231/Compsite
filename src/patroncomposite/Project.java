@@ -53,6 +53,47 @@ public class Project implements ProjectItem{
         return totalTime;
     }
     
+    public ProjectItem getFirstTask(){
+        if(!this.projectItems.isEmpty())
+        {
+            ProjectItem firstSon = this.projectItems.get(0);
+            if(firstSon instanceof Project) return ((Project)firstSon).getFirstTask();
+            return firstSon;
+        }
+        return null;
+    }
+    
+    public ProjectItem getLastTask(){
+        if(!this.projectItems.isEmpty())
+        {
+            ProjectItem lastSon = this.projectItems.get(this.projectItems.size()-1);
+            if(lastSon instanceof Project) return ((Project)lastSon).getFirstTask();
+            return lastSon;
+        }
+        return null;
+    }
+    
+    public ProjectItem getNextTask(){
+        if(!this.projectItems.isEmpty())
+        {
+            for (ProjectItem item : projectItems)
+            {
+                if (item instanceof Project)
+                {
+                    if(((Project)item).getNextTask()!=null){
+                        return ((Project)item).getNextTask();
+                    }
+                }
+                else
+                {
+                    if (item.getCompletionTime()>0) return item;
+                    return null;
+                }
+            }
+        }
+        return null;
+    }
+    
     public void setName(String newName){
         name = newName;
     }

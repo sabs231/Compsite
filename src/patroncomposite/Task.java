@@ -68,6 +68,7 @@ public class Task implements ProjectItem{
     
     @Override
     public double getCompletionTime(){
+        if(this.startDate == null || this.finishDate == null) return 0;
         long diff;
         diff = this.getStartDate().getTime()-this.getFinishDate().getTime();
         diff = diff / (1000*60*60*24);

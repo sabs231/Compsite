@@ -13,21 +13,21 @@ public class RunPatternComp{
     public static void main(String[] args) {
         System.out.println("Ejemplo pare el Patron Composite");
         System.out.println();
-        System.out.println("Este código popaga un método para ejecutar durante todo ");
+        System.out.println("Este cï¿½digo popaga un mï¿½todo para ejecutar durante todo ");
         System.out.println("una estructura de arbol. El arbol representa un projecto, y es ");
         System.out.println("compuesto de tres tipos de ProjectItems: Project, Task y Deliverable.");
         System.out.println("De estras tres clases, Project y Task pueden almacenar un ArrayList de ProjectItems.");
         System.out.println("Esto significa que ouede actuar como nodo de la rama del arbol");
-        System.out.println("El Deriverable es un nodo terminal debido a que no puede llevar a cabo ningún ProjectItem");
+        System.out.println("El Deriverable es un nodo terminal debido a que no puede llevar a cabo ningï¿½n ProjectItem");
         System.out.println();
         System.out.println();
         
-        System.out.println("En este ejemplo, el método definido por ProjectItem, getTimeRequired, privee el método para");
-        System.out.println("demostrar el patron. Para el nodo de la rama, el método podrá ser pasado sobre los hijos. ");
+        System.out.println("En este ejemplo, el mï¿½todo definido por ProjectItem, getTimeRequired, privee el mï¿½todo para");
+        System.out.println("demostrar el patron. Para el nodo de la rama, el mï¿½todo podrï¿½ ser pasado sobre los hijos. ");
         System.out.println("Para el nodo terminal (Deliverable), un unico valor puede ser regresado.");
         System.out.println();
-        System.out.println("Nota: es posible llamar este métido en DONDEQUIERA en el arbol");
-        System.out.println("Puesto que todas las clases implementan el método getTimeRequired");
+        System.out.println("Nota: es posible llamar este mï¿½tido en DONDEQUIERA en el arbol");
+        System.out.println("Puesto que todas las clases implementan el mï¿½todo getTimeRequired");
         System.out.println("Esto significa que podremos calcular el Tiempo requierido para completar el proyecto o alguna");
         System.out.println("parte del proyecto.");
         System.out.println();
@@ -40,7 +40,7 @@ public class RunPatternComp{
         Project project = (Project) (DataRetriever.deserializeData("data.ser"));
         System.out.println("Calculando el tiempo total estimado para el proyecto");
         System.out.println("\t" + "Nombre del Proyecto: " + project.getName());
-        System.out.println("\t" + "Descripción del Proyecto: " + project.getDescription());
+        System.out.println("\t" + "Descripciï¿½n del Proyecto: " + project.getDescription());
         System.out.println("Time Required: " + project.getTimeRequired());
     }   
 }
